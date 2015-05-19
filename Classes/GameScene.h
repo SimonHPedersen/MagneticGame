@@ -21,6 +21,8 @@ public:
     cocos2d::PhysicsWorld* m_world;
     cocos2d::PhysicsBody* physicsBody;
     cocos2d::PhysicsBody* physicsBodyStatic;
+    cocos2d::PhysicsBody* physicsBodyStatic2;
+    cocos2d::PhysicsBody* physicsBodyStatic3;
     
     public:
     // implement the "static create()" method manually
