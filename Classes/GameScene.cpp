@@ -75,23 +75,29 @@ bool MagneticWorld::init()
     auto magnetSprite1 = magnet1->getSprite();
     this->addChild(magnetSprite1);
 
-    auto magnet2 = new Magnet(600, 600, -200000, 300, b2_world);
+    auto magnet2 = new Magnet(600, 600, -200000, 200, b2_world);
     auto magnetSprite2 = magnet2->getSprite();
     this->addChild(magnetSprite2);
 
-    auto magnet3 = new Magnet(200, 400, 300000, 100, b2_world);
+    auto magnet3 = new Magnet(200, 400, -200000, 200, b2_world);
     auto magnetSprite3 = magnet3->getSprite();
     this->addChild(magnetSprite3);
     
-    auto magnet4 = new Magnet(400, 200, -400000, 200, b2_world);
+    auto magnet4 = new Magnet(400, 200, 100000, 200, b2_world);
     auto magnetSprite4 = magnet4->getSprite();
     this->addChild(magnetSprite4);
 
+    auto magnet5 = new Magnet(800, 100, -100000, 200, b2_world);
+    auto magnetSprite5 = magnet5->getSprite();
+    this->addChild(magnetSprite5);
     
     
     magnetList.push_back(magnet1);
     magnetList.push_back(magnet2);
-
+    magnetList.push_back(magnet3);
+    magnetList.push_back(magnet4);
+    magnetList.push_back(magnet5);
+    
     auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
     auto edgeNode = Node::create();
     edgeNode->setPosition(Point(visibleSize.width/2,visibleSize.height/2));

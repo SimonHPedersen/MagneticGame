@@ -13,9 +13,10 @@ USING_NS_CC;
 Magnet::Magnet(int x, int y, int strength, int magnetRadius, b2World* world) {
 
     magnetSprite = Sprite::create("magnet.png");
+    if (strength < 0) {
+        magnetSprite->setColor(Color3B::GREEN);
+    }
     
-    //BitMap* magnet = BitMap::create("Magnet.cpp");
-
     magnetSprite->setAnchorPoint(Vec2(0.5f, 0.5f));
     
     magnetSprite->setPosition(x,y);
