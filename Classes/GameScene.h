@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "Box2D/Box2D.h"
 
 class MagneticWorld : public cocos2d::Layer
 {
@@ -27,8 +28,9 @@ public:
     public:
     // implement the "static create()" method manually
     CREATE_FUNC(MagneticWorld);
-    
 
+
+    cocos2d::Sprite* magnet(int x, int y, int strength, int magnetRadius);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

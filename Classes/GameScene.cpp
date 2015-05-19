@@ -22,9 +22,9 @@ Scene* MagneticWorld::createScene()
 void MagneticWorld::setPhyWorld(cocos2d::PhysicsWorld *world) {
     m_world = world;
     
-    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), 1.0f, 1.0f);
-    auto joint2 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic2, Vec2(0,0), Vec2(0,0), 10.0f, 0.0f);
-    auto joint3 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic3, Vec2(0,0), Vec2(0,0), 10.0f, 0.0f);
+    auto joint  = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic,  Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
+    auto joint2 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic2, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
+    auto joint3 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic3, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
     m_world->addJoint(joint);
     m_world->addJoint(joint2);
     m_world->addJoint(joint3);
@@ -115,15 +115,15 @@ bool MagneticWorld::init()
     this->physicsBody->setGravityEnable(false);
 
     //set initial velocity of physicsBody
-    this->physicsBody->setVelocity(Vec2(20,
-                                  20));
+    this->physicsBody->setVelocity(Vec2(100,
+                                  100));
     //physicsBody->setTag("Dynamic");
 
     // add "MagneticWorld" splash screen"
     auto spriteBall = Sprite::create("ball.png");
 
     // position the sprite on the center of the screen
-    spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y + 200));
 
 
     spriteBall->setPhysicsBody(this->physicsBody);
