@@ -69,6 +69,10 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		DF27B3271B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */; };
 		DF27B3281B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */; };
+		DF27B32B1B0B6B7C0011E3B0 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3291B0B6B7C0011E3B0 /* ball.png */; };
+		DF27B32C1B0B6B7C0011E3B0 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3291B0B6B7C0011E3B0 /* ball.png */; };
+		DF27B32D1B0B6B7C0011E3B0 /* magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B32A1B0B6B7C0011E3B0 /* magnet.png */; };
+		DF27B32E1B0B6B7C0011E3B0 /* magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B32A1B0B6B7C0011E3B0 /* magnet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +167,8 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainMenuScene.cpp; sourceTree = "<group>"; };
 		DF27B3261B0B6B070011E3B0 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		DF27B3291B0B6B7C0011E3B0 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		DF27B32A1B0B6B7C0011E3B0 /* magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnet.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +288,8 @@
 			children = (
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
+				DF27B32A1B0B6B7C0011E3B0 /* magnet.png */,
+				DF27B3291B0B6B7C0011E3B0 /* ball.png */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
@@ -465,7 +473,9 @@
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				DF27B32B1B0B6B7C0011E3B0 /* ball.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				DF27B32D1B0B6B7C0011E3B0 /* magnet.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
@@ -482,11 +492,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				DF27B32E1B0B6B7C0011E3B0 /* magnet.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				DF27B32C1B0B6B7C0011E3B0 /* ball.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

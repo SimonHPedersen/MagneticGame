@@ -76,7 +76,7 @@ bool MagneticWorld::init()
     this->physicsBodyStatic->setDynamic(false);
 
     //create a sprite
-    auto sprite = Sprite::create("CloseSelected.png");
+    auto sprite = Sprite::create("magnet.png");
     sprite->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y + 200));
     //apply physicsBody to the sprite
     sprite->setPhysicsBody(physicsBodyStatic);
@@ -88,7 +88,7 @@ bool MagneticWorld::init()
                                                PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic2->setDynamic(false);
     
-    auto sprite2 = Sprite::create("CloseSelected.png");
+    auto sprite2 = Sprite::create("magnet.png");
     sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y - 200));
     //apply physicsBody to the sprite
     sprite2->setPhysicsBody(physicsBodyStatic2);
@@ -101,7 +101,7 @@ bool MagneticWorld::init()
                                                 PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic3->setDynamic(false);
     
-    auto sprite3 = Sprite::create("CloseSelected.png");
+    auto sprite3 = Sprite::create("magnet.png");
     sprite3->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y - 200));
     //apply physicsBody to the sprite
     sprite3->setPhysicsBody(physicsBodyStatic3);
@@ -120,7 +120,7 @@ bool MagneticWorld::init()
     //physicsBody->setTag("Dynamic");
 
     // add "MagneticWorld" splash screen"
-    auto spriteBall = Sprite::create("CloseNormal.png");
+    auto spriteBall = Sprite::create("ball.png");
 
     // position the sprite on the center of the screen
     spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
