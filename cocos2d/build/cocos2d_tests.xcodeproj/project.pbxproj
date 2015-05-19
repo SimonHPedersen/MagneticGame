@@ -174,8 +174,8 @@
 		1ABCA3B018CDA06D0087CE3A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA3AF18CDA06D0087CE3A /* libz.dylib */; };
 		1AC358C018CEC1BF00F37B72 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BB18CEC1BF00F37B72 /* AppDelegate.cpp */; };
 		1AC358C118CEC1BF00F37B72 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BB18CEC1BF00F37B72 /* AppDelegate.cpp */; };
-		1AC358C218CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BE18CEC1BF00F37B72 /* HelloWorldScene.cpp */; };
-		1AC358C318CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BE18CEC1BF00F37B72 /* HelloWorldScene.cpp */; };
+		1AC358C218CEC1BF00F37B72 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BE18CEC1BF00F37B72 /* GameScene.cpp */; };
+		1AC358C318CEC1BF00F37B72 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358BE18CEC1BF00F37B72 /* GameScene.cpp */; };
 		1AC358DA18CEC1CB00F37B72 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AC358C618CEC1CA00F37B72 /* AppController.mm */; };
 		1AC358DB18CEC1CB00F37B72 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC358C718CEC1CA00F37B72 /* Default-568h@2x.png */; };
 		1AC358DC18CEC1CB00F37B72 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AC358C818CEC1CA00F37B72 /* Default.png */; };
@@ -1126,7 +1126,7 @@
 		1AC358BB18CEC1BF00F37B72 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		1AC358BC18CEC1BF00F37B72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1AC358BD18CEC1BF00F37B72 /* AppMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacros.h; sourceTree = "<group>"; };
-		1AC358BE18CEC1BF00F37B72 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
+		1AC358BE18CEC1BF00F37B72 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		1AC358BF18CEC1BF00F37B72 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		1AC358C518CEC1CA00F37B72 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		1AC358C618CEC1CA00F37B72 /* AppController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppController.mm; sourceTree = "<group>"; };
@@ -2118,7 +2118,7 @@
 				1AC358BB18CEC1BF00F37B72 /* AppDelegate.cpp */,
 				1AC358BC18CEC1BF00F37B72 /* AppDelegate.h */,
 				1AC358BD18CEC1BF00F37B72 /* AppMacros.h */,
-				1AC358BE18CEC1BF00F37B72 /* HelloWorldScene.cpp */,
+				1AC358BE18CEC1BF00F37B72 /* GameScene.cpp */,
 				1AC358BF18CEC1BF00F37B72 /* HelloWorldScene.h */,
 			);
 			name = Classes;
@@ -4745,7 +4745,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC358C218CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */,
+				1AC358C218CEC1BF00F37B72 /* GameScene.cpp in Sources */,
 				1AC358C018CEC1BF00F37B72 /* AppDelegate.cpp in Sources */,
 				1AC358F918CEC1D400F37B72 /* main.cpp in Sources */,
 			);
@@ -4766,7 +4766,7 @@
 			files = (
 				1AC358DA18CEC1CB00F37B72 /* AppController.mm in Sources */,
 				1AC358EB18CEC1CB00F37B72 /* RootViewController.mm in Sources */,
-				1AC358C318CEC1BF00F37B72 /* HelloWorldScene.cpp in Sources */,
+				1AC358C318CEC1BF00F37B72 /* GameScene.cpp in Sources */,
 				1AC358EA18CEC1CB00F37B72 /* main.m in Sources */,
 				1AC358C118CEC1BF00F37B72 /* AppDelegate.cpp in Sources */,
 			);
