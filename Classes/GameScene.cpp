@@ -2,19 +2,28 @@
 
 USING_NS_CC;
 
-Scene*MagneticWorld::createScene()
+Scene* MagneticWorld::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::createWithPhysics();
     
     // 'layer' is an autorelease object
     auto layer = MagneticWorld::create();
-
+    
     // add layer as a child to scene
     scene->addChild(layer);
 
+    layer->setPhyWorld(scene->getPhysicsWorld());
+    
     // return the scene
     return scene;
+}
+
+void MagneticWorld::setPhyWorld(cocos2d::PhysicsWorld *world) {
+    m_world = world;
+    
+    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), -100.0f, 0.0f);
+    m_world->addJoint(joint);
 }
 
 // on "init" you need to initialize your instance
@@ -57,9 +66,9 @@ bool MagneticWorld::init()
     edgeNode->setPhysicsBody(body);
     this->addChild(edgeNode);
 
-    auto physicsBodyStatic = PhysicsBody::createBox(Size(65.0f, 81.0f),
+    physicsBodyStatic = PhysicsBody::createBox(Size(65.0f, 81.0f),
                                               PhysicsMaterial(0.1f, 1.0f, 0.0f));
-    physicsBodyStatic->setDynamic(false);
+    this->physicsBodyStatic->setDynamic(false);
 
     //create a sprite
     auto sprite = Sprite::create("CloseSelected.png");
@@ -69,13 +78,13 @@ bool MagneticWorld::init()
     //apply physicsBody to the sprite
     sprite->setPhysicsBody(physicsBodyStatic);
 
-    auto physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f),
+    this->physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f),
                                          PhysicsMaterial(0.1f, 1.0f, 0.0f));
     //set the body isn't affected by the physics world's gravitational force
-    physicsBody->setGravityEnable(false);
+    this->physicsBody->setGravityEnable(false);
 
     //set initial velocity of physicsBody
-    physicsBody->setVelocity(Vec2(50,
+    this->physicsBody->setVelocity(Vec2(50,
                                   50));
     //physicsBody->setTag("Dynamic");
 
@@ -86,16 +95,13 @@ bool MagneticWorld::init()
     spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
 
-    spriteBall->setPhysicsBody(physicsBody);
+    spriteBall->setPhysicsBody(this->physicsBody);
 
     // add the sprite as a child to this layer
     this->addChild(spriteBall, 0);
-
-    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), 100.0f, 0.9f);
-
+    
     return true;
 }
-
 
 void MagneticWorld::menuCloseCallback(Ref* pSender)
 {

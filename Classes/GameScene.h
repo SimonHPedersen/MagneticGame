@@ -14,9 +14,19 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+
+    void setPhyWorld(cocos2d::PhysicsWorld* world);
     
+    private:
+    cocos2d::PhysicsWorld* m_world;
+    cocos2d::PhysicsBody* physicsBody;
+    cocos2d::PhysicsBody* physicsBodyStatic;
+    
+    public:
     // implement the "static create()" method manually
     CREATE_FUNC(MagneticWorld);
+    
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__
