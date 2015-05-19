@@ -5,7 +5,7 @@ USING_NS_CC;
 Scene*MagneticWorld::createScene()
 {
     // 'scene' is an autorelease object
-    auto scene = Scene::create();
+    auto scene = Scene::createWithPhysics();
     
     // 'layer' is an autorelease object
     auto layer = MagneticWorld::create();
@@ -51,27 +51,48 @@ bool MagneticWorld::init()
     /////////////////////////////
     // 3. add your codes below...
 
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    auto label = Label::createWithTTF("Hello MagneticWorld", "fonts/Marker Felt.ttf", 10);
-    
-    // position the label on the center of the screen
-    label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
+    auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
+    auto edgeNode = Node::create();
+    edgeNode->setPosition(Point(visibleSize.width/2,visibleSize.height/2));
+    edgeNode->setPhysicsBody(body);
+    this->addChild(edgeNode);
 
-    // add the label as a child to this layer
-    this->addChild(label, 1);
+    auto physicsBodyStatic = PhysicsBody::createBox(Size(65.0f, 81.0f),
+                                              PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    physicsBodyStatic->setDynamic(false);
+
+    //create a sprite
+    auto sprite = Sprite::create("CloseSelected.png");
+    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x + 100, visibleSize.height/2 + origin.y + 100));
+    addChild(sprite);
+
+    //apply physicsBody to the sprite
+    sprite->setPhysicsBody(physicsBodyStatic);
+
+    auto physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f),
+                                         PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    //set the body isn't affected by the physics world's gravitational force
+    physicsBody->setGravityEnable(false);
+
+    //set initial velocity of physicsBody
+    physicsBody->setVelocity(Vec2(50,
+                                  50));
+    //physicsBody->setTag("Dynamic");
 
     // add "MagneticWorld" splash screen"
-    auto sprite = Sprite::create("Icon-152.png");
+    auto spriteBall = Sprite::create("CloseNormal.png");
 
     // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+
+
+    spriteBall->setPhysicsBody(physicsBody);
 
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
-    
+    this->addChild(spriteBall, 0);
+
+    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), 100.0f, 0.9f);
+
     return true;
 }
 
