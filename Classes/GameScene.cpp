@@ -70,12 +70,27 @@ bool MagneticWorld::init()
     
     //først laver vi lige en b2world
     auto b2_world = new b2World(b2Vec2(1.0f, 1.0f));
-    magnet = new Magnet(500, 500, 100000, 1000, b2_world);
+
+    auto magnet1 = new Magnet(400, 400, 100000, 200, b2_world);
+    auto magnetSprite1 = magnet1->getSprite();
+    this->addChild(magnetSprite1);
+
+    auto magnet2 = new Magnet(600, 600, 200000, 300, b2_world);
+    auto magnetSprite2 = magnet2->getSprite();
+    this->addChild(magnetSprite2);
+
+    auto magnet3 = new Magnet(200, 400, 300000, 100, b2_world);
+    auto magnetSprite3 = magnet3->getSprite();
+    this->addChild(magnetSprite3);
     
-    auto magnetSprite = magnet->getSprite();
-    this->addChild(magnetSprite);
+    auto magnet4 = new Magnet(400, 200, 400000, 200, b2_world);
+    auto magnetSprite4 = magnet4->getSprite();
+    this->addChild(magnetSprite4);
+
     
     
+    magnetList.push_back(magnet1);
+    magnetList.push_back(magnet2);
 
     auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
     auto edgeNode = Node::create();
@@ -89,7 +104,7 @@ bool MagneticWorld::init()
     this->physicsBodyStatic->setDynamic(false);
 
     //create a sprite
-    auto sprite = Sprite::create("magnet.png");
+    auto sprite = Sprite::create("CloseSelected.png");
     sprite->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y + 200));
     //apply physicsBody to the sprite
     sprite->setPhysicsBody(physicsBodyStatic);
@@ -101,7 +116,7 @@ bool MagneticWorld::init()
                                                    PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic2->setDynamic(false);
     
-    auto sprite2 = Sprite::create("magnet.png");
+    auto sprite2 = Sprite::create("CloseSelected.png");
     sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y - 200));
     //apply physicsBody to the sprite
     sprite2->setPhysicsBody(physicsBodyStatic2);
@@ -114,7 +129,7 @@ bool MagneticWorld::init()
                                                    PhysicsMaterial(0.1f, 1.0f, 0.8f));
     this->physicsBodyStatic3->setDynamic(false);
     
-    auto sprite3 = Sprite::create("magnet.png");
+    auto sprite3 = Sprite::create("CloseSelected.png");
     sprite3->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y - 200));
     //apply physicsBody to the sprite
     sprite3->setPhysicsBody(physicsBodyStatic3);
@@ -150,14 +165,19 @@ bool MagneticWorld::init()
 
 void MagneticWorld::update(float delta) {
     
-    auto xDiff = magnet->getSprite()->getPositionX() - ballSprite->getPositionX();
-    auto yDiff = magnet->getSprite()->getPositionY() - ballSprite->getPositionY();
-    auto rad2 = xDiff*xDiff + yDiff*yDiff;
-    auto distance = sqrt(rad2);
-    
-    //if (distance <= magnet->radius) {
-    physicsBody->applyImpulse(Vec2((magnet->strength*xDiff)/rad2, (magnet->strength*yDiff)/rad2)), Vec2(ballSprite->getPositionX(), ballSprite->getPositionY());
-    //}
+    for (std::list<Magnet*>::const_iterator iterator = magnetList.begin(); iterator != magnetList.end(); ++iterator) {
+        auto magnet = (*iterator);
+        auto xDiff = magnet->getSprite()->getPositionX() - ballSprite->getPositionX();
+        auto yDiff = magnet->getSprite()->getPositionY() - ballSprite->getPositionY();
+        auto rad2 = xDiff*xDiff + yDiff*yDiff;
+        auto distance = sqrt(rad2);
+        
+        if (distance <= magnet->radius) {
+            physicsBody->applyImpulse(Vec2((magnet->strength*xDiff)/rad2, (magnet->strength*yDiff)/rad2)), Vec2(ballSprite->getPositionX(), ballSprite->getPositionY());
+
+        }
+        
+    }
     
 
 }

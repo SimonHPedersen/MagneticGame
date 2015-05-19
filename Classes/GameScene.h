@@ -25,9 +25,9 @@ public:
     cocos2d::PhysicsBody* physicsBodyStatic;
     cocos2d::PhysicsBody* physicsBodyStatic2;
     cocos2d::PhysicsBody* physicsBodyStatic3;
-    Magnet* magnet;
     cocos2d::Sprite* ballSprite;
     virtual void update(float delta);
+    std::list<Magnet*> magnetList;
     
     public:
     // implement the "static create()" method manually
