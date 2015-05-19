@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "Magnet.h"
 
 USING_NS_CC;
 
@@ -22,12 +23,13 @@ Scene* MagneticWorld::createScene()
 void MagneticWorld::setPhyWorld(cocos2d::PhysicsWorld *world) {
     m_world = world;
     
-    auto joint  = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic,  Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
+    /*auto joint  = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic,  Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
     auto joint2 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic2, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
     auto joint3 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic3, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
     m_world->addJoint(joint);
     m_world->addJoint(joint2);
     m_world->addJoint(joint3);
+     */
 }
 
 // on "init" you need to initialize your instance
@@ -39,7 +41,7 @@ bool MagneticWorld::init()
     {
         return false;
     }
-    
+
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -63,6 +65,17 @@ bool MagneticWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
+
+    //forsøg på brug af magnet
+    
+    //først laver vi lige en b2world
+    auto b2_world = new b2World(b2Vec2(1.0f, 1.0f));
+    magnet = new Magnet(500, 500, 100000, 1000, b2_world);
+    
+    auto magnetSprite = magnet->getSprite();
+    this->addChild(magnetSprite);
+    
+    
 
     auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
     auto edgeNode = Node::create();
@@ -98,7 +111,7 @@ bool MagneticWorld::init()
     
     //magnet3
     physicsBodyStatic3 = PhysicsBody::createCircle(30.0f,
-                                                   PhysicsMaterial(0.1f, 1.0f, 0.0f));
+                                                   PhysicsMaterial(0.1f, 1.0f, 0.8f));
     this->physicsBodyStatic3->setDynamic(false);
     
     auto sprite3 = Sprite::create("magnet.png");
@@ -115,23 +128,38 @@ bool MagneticWorld::init()
     this->physicsBody->setGravityEnable(false);
 
     //set initial velocity of physicsBody
-    this->physicsBody->setVelocity(Vec2(100,
-                                  100));
+    this->physicsBody->setVelocity(Vec2(1,
+                                  1));
     //physicsBody->setTag("Dynamic");
 
     // add "MagneticWorld" splash screen"
-    auto spriteBall = Sprite::create("ball.png");
+    ballSprite = Sprite::create("ball.png");
 
     // position the sprite on the center of the screen
-    spriteBall->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y + 200));
+    ballSprite->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y + 200));
 
 
-    spriteBall->setPhysicsBody(this->physicsBody);
+    ballSprite->setPhysicsBody(this->physicsBody);
 
     // add the sprite as a child to this layer
-    this->addChild(spriteBall, 0);
+    this->addChild(ballSprite, 0);
     
+    scheduleUpdate();
     return true;
+}
+
+void MagneticWorld::update(float delta) {
+    
+    auto xDiff = magnet->getSprite()->getPositionX() - ballSprite->getPositionX();
+    auto yDiff = magnet->getSprite()->getPositionY() - ballSprite->getPositionY();
+    auto rad2 = xDiff*xDiff + yDiff*yDiff;
+    auto distance = sqrt(rad2);
+    
+    //if (distance <= magnet->radius) {
+    physicsBody->applyImpulse(Vec2((magnet->strength*xDiff)/rad2, (magnet->strength*yDiff)/rad2)), Vec2(ballSprite->getPositionX(), ballSprite->getPositionY());
+    //}
+    
+
 }
 
 void MagneticWorld::menuCloseCallback(Ref* pSender)

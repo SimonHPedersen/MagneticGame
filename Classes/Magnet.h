@@ -18,10 +18,10 @@ class Magnet
     Magnet(int x, int y, int strength, int magnetRadius, b2World* world);
     
     cocos2d::Sprite* getSprite();
-    
-    private:
     int strength;
     int radius;
+    
+    private:
     cocos2d::Sprite* magnetSprite;
     b2Body* magnetB2Body;
 };

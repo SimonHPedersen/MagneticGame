@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
+#include "Magnet.h"
 
 class MagneticWorld : public cocos2d::Layer
 {
@@ -24,13 +25,13 @@ public:
     cocos2d::PhysicsBody* physicsBodyStatic;
     cocos2d::PhysicsBody* physicsBodyStatic2;
     cocos2d::PhysicsBody* physicsBodyStatic3;
+    Magnet* magnet;
+    cocos2d::Sprite* ballSprite;
+    virtual void update(float delta);
     
     public:
     // implement the "static create()" method manually
     CREATE_FUNC(MagneticWorld);
-
-
-    cocos2d::Sprite* magnet(int x, int y, int strength, int magnetRadius);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
