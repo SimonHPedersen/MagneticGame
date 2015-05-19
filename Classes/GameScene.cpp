@@ -75,7 +75,7 @@ bool MagneticWorld::init()
     auto magnetSprite1 = magnet1->getSprite();
     this->addChild(magnetSprite1);
 
-    auto magnet2 = new Magnet(600, 600, 200000, 300, b2_world);
+    auto magnet2 = new Magnet(600, 600, -200000, 300, b2_world);
     auto magnetSprite2 = magnet2->getSprite();
     this->addChild(magnetSprite2);
 
@@ -83,7 +83,7 @@ bool MagneticWorld::init()
     auto magnetSprite3 = magnet3->getSprite();
     this->addChild(magnetSprite3);
     
-    auto magnet4 = new Magnet(400, 200, 400000, 200, b2_world);
+    auto magnet4 = new Magnet(400, 200, -400000, 200, b2_world);
     auto magnetSprite4 = magnet4->getSprite();
     this->addChild(magnetSprite4);
 
