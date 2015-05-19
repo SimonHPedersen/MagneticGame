@@ -22,7 +22,7 @@ Scene* MagneticWorld::createScene()
 void MagneticWorld::setPhyWorld(cocos2d::PhysicsWorld *world) {
     m_world = world;
     
-    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), 10.0f, 0.0f);
+    auto joint = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic, Vec2(0,0), Vec2(0,0), 1.0f, 1.0f);
     auto joint2 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic2, Vec2(0,0), Vec2(0,0), 10.0f, 0.0f);
     auto joint3 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic3, Vec2(0,0), Vec2(0,0), 10.0f, 0.0f);
     m_world->addJoint(joint);
@@ -71,7 +71,7 @@ bool MagneticWorld::init()
     this->addChild(edgeNode);
 
     //magnet1
-    physicsBodyStatic = PhysicsBody::createBox(Size(65.0f, 81.0f),
+    physicsBodyStatic = PhysicsBody::createCircle(30.0f,
                                                PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic->setDynamic(false);
 
@@ -84,8 +84,8 @@ bool MagneticWorld::init()
     addChild(sprite);
 
     //magnet2
-    physicsBodyStatic2 = PhysicsBody::createBox(Size(65.0f, 81.0f),
-                                               PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    physicsBodyStatic2 = PhysicsBody::createCircle(30.0f,
+                                                   PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic2->setDynamic(false);
     
     auto sprite2 = Sprite::create("magnet.png");
@@ -97,8 +97,8 @@ bool MagneticWorld::init()
 
     
     //magnet3
-    physicsBodyStatic3 = PhysicsBody::createBox(Size(65.0f, 81.0f),
-                                                PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    physicsBodyStatic3 = PhysicsBody::createCircle(30.0f,
+                                                   PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic3->setDynamic(false);
     
     auto sprite3 = Sprite::create("magnet.png");
@@ -109,8 +109,8 @@ bool MagneticWorld::init()
     addChild(sprite3);
     
 
-    this->physicsBody = PhysicsBody::createBox(Size(65.0f, 81.0f),
-                                         PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    this->physicsBody = PhysicsBody::createCircle(30.0f,
+                                                  PhysicsMaterial(0.1f, 1.0f, 0.0f));
     //set the body isn't affected by the physics world's gravitational force
     this->physicsBody->setGravityEnable(false);
 
