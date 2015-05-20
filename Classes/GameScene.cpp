@@ -3,6 +3,7 @@
 #include "HorizontalWall.h"
 #include "VerticalWall.h"
 #include "FinishTile.h"
+#include "TimerLabel.h"
 
 USING_NS_CC;
 
@@ -149,6 +150,11 @@ bool MagneticWorld::init()
     // add the sprite as a child to this layer
     this->addChild(ballSprite, 0);
     finishTile->setBall(ballSprite);
+
+    //timer
+    auto timerLabel = TimerLabel::create();
+    timerLabel->initialize(visibleSize.width - 30, visibleSize.height - 20, 60, this);
+    
     scheduleUpdate();
     return true;
 }
@@ -156,7 +162,7 @@ bool MagneticWorld::init()
 bool MagneticWorld::isTouchingSprite(Sprite* sprite, Touch* touch) {
     float distance = sprite->getPosition().getDistance(this->
                                                        touchToPoint(touch));
-    return (distance < 25.0f);
+    return (distance < 60.0f);
 }
 
 Point MagneticWorld::touchToPoint(Touch* touch)
@@ -241,7 +247,7 @@ void MagneticWorld::update(float delta) {
         
     }
     
-
+    
 }
 
 void MagneticWorld::menuCloseCallback(Ref* pSender)

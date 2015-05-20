@@ -61,6 +61,9 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		CEA9AB4C1B0C86CA00B6E39D /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB481B0C86CA00B6E39D /* HorizontalWall.cpp */; };
+		CEA9AB4D1B0C86CA00B6E39D /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB4A1B0C86CA00B6E39D /* VerticalWall.cpp */; };
+		CEA9AB501B0C910900B6E39D /* TimerLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
@@ -179,6 +182,12 @@
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE83C2311B0B552C00E87B35 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		CEA9AB481B0C86CA00B6E39D /* HorizontalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HorizontalWall.cpp; sourceTree = "<group>"; };
+		CEA9AB491B0C86CA00B6E39D /* HorizontalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalWall.h; sourceTree = "<group>"; };
+		CEA9AB4A1B0C86CA00B6E39D /* VerticalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VerticalWall.cpp; sourceTree = "<group>"; };
+		CEA9AB4B1B0C86CA00B6E39D /* VerticalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalWall.h; sourceTree = "<group>"; };
+		CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimerLabel.cpp; sourceTree = "<group>"; };
+		CEA9AB4F1B0C910900B6E39D /* TimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerLabel.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -360,6 +369,10 @@
 				DF27B3331B0C64290011E3B0 /* Magnet.h */,
 				DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */,
 				DF27B3261B0B6B070011E3B0 /* MainMenuScene.h */,
+				46880B8619C43A87006E1F66 /* GameScene.cpp */,
+				CE83C2311B0B552C00E87B35 /* GameScene.h */,
+				CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */,
+				CEA9AB4F1B0C910900B6E39D /* TimerLabel.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -578,6 +591,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DF27B35F1B0C918C0011E3B0 /* VerticalWall.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				CEA9AB501B0C910900B6E39D /* TimerLabel.cpp in Sources */,
 				DF27B3271B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
 				DF27B33E1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
 				DF27B3561B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */,
