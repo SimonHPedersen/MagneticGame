@@ -86,6 +86,10 @@
 		DF27B3531B0C8C7E0011E3B0 /* won3.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34E1B0C8C7E0011E3B0 /* won3.png */; };
 		DF27B3561B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */; };
 		DF27B3571B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */; };
+		DF27B35D1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */; };
+		DF27B35E1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */; };
+		DF27B35F1B0C918C0011E3B0 /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */; };
+		DF27B3601B0C918C0011E3B0 /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +198,10 @@
 		DF27B34E1B0C8C7E0011E3B0 /* won3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = won3.png; sourceTree = "<group>"; };
 		DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
 		DF27B3551B0C8CA60011E3B0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
+		DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HorizontalWall.cpp; sourceTree = "<group>"; };
+		DF27B35A1B0C918C0011E3B0 /* HorizontalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalWall.h; sourceTree = "<group>"; };
+		DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VerticalWall.cpp; sourceTree = "<group>"; };
+		DF27B35C1B0C918C0011E3B0 /* VerticalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalWall.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +340,10 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */,
+				DF27B35A1B0C918C0011E3B0 /* HorizontalWall.h */,
+				DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */,
+				DF27B35C1B0C918C0011E3B0 /* VerticalWall.h */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */,
@@ -554,9 +566,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				DF27B35D1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
 				DF27B3341B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				DF27B35F1B0C918C0011E3B0 /* VerticalWall.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DF27B3271B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
 				DF27B33E1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
@@ -573,7 +587,9 @@
 				DF27B33F1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
 				DF27B3351B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				DF27B3601B0C918C0011E3B0 /* VerticalWall.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				DF27B35E1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */,
 				DF27B3281B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
 			);
