@@ -21,6 +21,10 @@ Magnet::Magnet(int x, int y, int strength, int magnetRadius) {
     
     magnetSprite->setPosition(x,y);
     
+    float scale = abs(strength)*1.0 / 100000;
+    
+    magnetSprite->setScale(scale, scale);
+    
     auto physicsBody = PhysicsBody::createCircle(10.0f,
                                                    PhysicsMaterial(0.1f, 1.0f, 0.0f));
     physicsBody->setDynamic(false);

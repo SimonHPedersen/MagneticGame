@@ -69,15 +69,15 @@ bool MagneticWorld::init()
     auto magnetSprite1 = magnet1->getSprite();
     this->addChild(magnetSprite1);
 
-    auto magnet2 = new Magnet(600, 600, -200000, 200);
+    auto magnet2 = new Magnet(600, 600, -150000, 200);
     auto magnetSprite2 = magnet2->getSprite();
     this->addChild(magnetSprite2);
 
-    auto magnet3 = new Magnet(200, 400, -200000, 200);
+    auto magnet3 = new Magnet(200, 400, -150000, 200);
     auto magnetSprite3 = magnet3->getSprite();
     this->addChild(magnetSprite3);
     
-    auto magnet4 = new Magnet(400, 200, 200000, 200);
+    auto magnet4 = new Magnet(400, 200, 150000, 200);
     auto magnetSprite4 = magnet4->getSprite();
     this->addChild(magnetSprite4);
 
@@ -209,7 +209,7 @@ void MagneticWorld::onTouchesEnded(const std::vector<Touch*>& touches, Event* ev
 
                     // stop any existing actions and reset the scale
                     magnet->getSprite()->stopAllActions();
-                    magnet->getSprite()->setScale(1.0f);
+                    //magnet->getSprite()->setScale(1.0f);
 
                     // animate letting go of the sprite
                     magnet->getSprite()->runAction(Sequence::create(
