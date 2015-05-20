@@ -101,7 +101,9 @@ bool MagneticWorld::init()
     new HorizontalWall(300, 300, 20, this);
     new HorizontalWall(800, 800, 20, this);
     new HorizontalWall(500, 500, 20, this);
-    new HorizontalWall(100, 100, 20, this);
+    new HorizontalWall(100, 50, 20, this);
+    new HorizontalWall(200, 150, 20, this);
+    
     
     //new VerticalWall(10, 50, 20, this);
     new VerticalWall(8, 0, 300, this);
@@ -110,6 +112,7 @@ bool MagneticWorld::init()
     new VerticalWall(500, 700, 20, this);
     new VerticalWall(800, 600, 20, this);
     new VerticalWall(700, 100, 20, this);
+    new VerticalWall(600, 450, 4, this);
     
     //setup touch for dragging magnets
     // listen for touch events
@@ -162,7 +165,7 @@ bool MagneticWorld::init()
     
     //timer
     timerLabel = TimerLabel::create();
-    timerLabel->initialize(visibleSize.width - 40, visibleSize.height - 30, 10, this);
+    timerLabel->initialize(visibleSize.width - 40, visibleSize.height - 30, 30, this);
     finishTile->setTimer(timerLabel);
         
     scheduleUpdate();

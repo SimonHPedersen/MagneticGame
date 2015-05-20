@@ -61,7 +61,7 @@ void GameOverLayer::show(bool won)
         addChild(emitter, 10);
     }
     
-    auto gameOverLabel = Label::createWithTTF("Game Over!", "fonts/Marker Felt.ttf", 50);
+    auto gameOverLabel = Label::createWithTTF(won ? "You win!": "Game Over!", "fonts/Marker Felt.ttf", 50);
     gameOverLabel->setAnchorPoint(Vec2(0, 1));
     gameOverLabel->setPosition(Vec2(sprite->getContentSize().width + 60,
                                     this->getContentSize().height - 20));
