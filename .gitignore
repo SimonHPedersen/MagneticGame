@@ -1,1 +1,10 @@
-.idea/*
+.idea/
+proj.android/obj
+proj.android/bin
+proj.android/libs
+proj.android/gen
+proj.android/assets
+*.class
+cocos2d/cocos/platform/android/java/bin
+cocos2d/cocos/platform/android/java/gen
+bin/
