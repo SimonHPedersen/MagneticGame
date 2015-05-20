@@ -73,6 +73,18 @@
 		DF27B32C1B0B6B7C0011E3B0 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3291B0B6B7C0011E3B0 /* ball.png */; };
 		DF27B32D1B0B6B7C0011E3B0 /* magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B32A1B0B6B7C0011E3B0 /* magnet.png */; };
 		DF27B32E1B0B6B7C0011E3B0 /* magnet.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B32A1B0B6B7C0011E3B0 /* magnet.png */; };
+		DF27B3341B0C64290011E3B0 /* Magnet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3321B0C64290011E3B0 /* Magnet.cpp */; };
+		DF27B3351B0C64290011E3B0 /* Magnet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3321B0C64290011E3B0 /* Magnet.cpp */; };
+		DF27B3381B0C67040011E3B0 /* magnet2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3361B0C67040011E3B0 /* magnet2.png */; };
+		DF27B3391B0C67040011E3B0 /* magnet2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3361B0C67040011E3B0 /* magnet2.png */; };
+		DF27B33A1B0C67040011E3B0 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3371B0C67040011E3B0 /* wall.png */; };
+		DF27B33B1B0C67040011E3B0 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3371B0C67040011E3B0 /* wall.png */; };
+		DF27B33E1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */; };
+		DF27B33F1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */; };
+		DF27B3411B0C6D160011E3B0 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3401B0C6D160011E3B0 /* finish.png */; };
+		DF27B3421B0C6D160011E3B0 /* finish.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3401B0C6D160011E3B0 /* finish.png */; };
+		DF27B3471B0C6D350011E3B0 /* res in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3461B0C6D350011E3B0 /* res */; };
+		DF27B3481B0C6D350011E3B0 /* res in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3461B0C6D350011E3B0 /* res */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +181,14 @@
 		DF27B3261B0B6B070011E3B0 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		DF27B3291B0B6B7C0011E3B0 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		DF27B32A1B0B6B7C0011E3B0 /* magnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnet.png; sourceTree = "<group>"; };
+		DF27B3321B0C64290011E3B0 /* Magnet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Magnet.cpp; sourceTree = "<group>"; };
+		DF27B3331B0C64290011E3B0 /* Magnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magnet.h; sourceTree = "<group>"; };
+		DF27B3361B0C67040011E3B0 /* magnet2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magnet2.png; sourceTree = "<group>"; };
+		DF27B3371B0C67040011E3B0 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FinishTile.cpp; sourceTree = "<group>"; };
+		DF27B33D1B0C6B1F0011E3B0 /* FinishTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishTile.h; sourceTree = "<group>"; };
+		DF27B3401B0C6D160011E3B0 /* finish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = finish.png; sourceTree = "<group>"; };
+		DF27B3461B0C6D350011E3B0 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,9 +306,13 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DF27B3461B0C6D350011E3B0 /* res */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				DF27B32A1B0B6B7C0011E3B0 /* magnet.png */,
+				DF27B3361B0C67040011E3B0 /* magnet2.png */,
+				DF27B3401B0C6D160011E3B0 /* finish.png */,
+				DF27B3371B0C67040011E3B0 /* wall.png */,
 				DF27B3291B0B6B7C0011E3B0 /* ball.png */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
@@ -303,10 +327,14 @@
 			children = (
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
+				DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */,
+				DF27B33D1B0C6B1F0011E3B0 /* FinishTile.h */,
+				DF27B3321B0C64290011E3B0 /* Magnet.cpp */,
+				DF27B3331B0C64290011E3B0 /* Magnet.h */,
 				DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */,
 				DF27B3261B0B6B070011E3B0 /* MainMenuScene.h */,
-				CE83C2311B0B552C00E87B35 /* GameScene.h */,
 				46880B8619C43A87006E1F66 /* GameScene.cpp */,
+				CE83C2311B0B552C00E87B35 /* GameScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -461,12 +489,15 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				DF27B33A1B0C67040011E3B0 /* wall.png in Resources */,
+				DF27B3471B0C6D350011E3B0 /* res in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				DF27B3381B0C67040011E3B0 /* magnet2.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
@@ -479,6 +510,7 @@
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
+				DF27B3411B0C6D160011E3B0 /* finish.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
@@ -492,11 +524,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				DF27B3481B0C6D350011E3B0 /* res in Resources */,
+				DF27B33B1B0C67040011E3B0 /* wall.png in Resources */,
+				DF27B3391B0C67040011E3B0 /* magnet2.png in Resources */,
 				DF27B32E1B0B6B7C0011E3B0 /* magnet.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				DF27B3421B0C6D160011E3B0 /* finish.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				DF27B32C1B0B6B7C0011E3B0 /* ball.png in Resources */,
 			);
@@ -511,9 +547,11 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
+				DF27B3341B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				DF27B3271B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
+				DF27B33E1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +560,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF27B33F1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
+				DF27B3351B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				DF27B3281B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,

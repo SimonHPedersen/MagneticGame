@@ -10,6 +10,7 @@
 #define __MagneticGame__Magnet__
 
 #include <stdio.h>
+#include "cocos2d.h"
 #include "Box2D/Box2D.h"
 
 class Magnet

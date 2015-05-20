@@ -1,5 +1,6 @@
 #include "GameScene.h"
 #include "Magnet.h"
+#include "FinishTile.h"
 
 USING_NS_CC;
 
@@ -62,6 +63,11 @@ bool MagneticWorld::init()
     auto menu = Menu::create(closeItem, NULL);
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+    
+    // Tilføj et mål felt:
+    auto finishTile = FinishTile::create();
+    finishTile->setPosition(Vec2(32, visibleSize.height - 32));
+    this->addChild(finishTile);
 
     /////////////////////////////
     // 3. add your codes below...
