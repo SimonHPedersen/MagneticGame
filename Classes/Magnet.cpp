@@ -21,6 +21,12 @@ Magnet::Magnet(int x, int y, int strength, int magnetRadius, b2World* world) {
     
     magnetSprite->setPosition(x,y);
     
+    auto physicsBody = PhysicsBody::createCircle(10.0f,
+                                                   PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    physicsBody->setDynamic(false);
+    
+    magnetSprite->setPhysicsBody(physicsBody);
+    
     /* Smuk men unødvendig kode
     auto radius = (magnetSprite->getBoundingBox().getMaxX() - magnetSprite->getBoundingBox().getMinX()) / 2;
 

@@ -28,10 +28,23 @@ public:
     cocos2d::Sprite* ballSprite;
     virtual void update(float delta);
     std::list<Magnet*> magnetList;
+    cocos2d::Vec2 touchOffset;
     
     public:
     // implement the "static create()" method manually
     CREATE_FUNC(MagneticWorld);
+
+    bool isTouchingSprite(cocos2d::Sprite *sprite, cocos2d::Touch *touch);
+
+    cocos2d::Point touchToPoint(cocos2d::Touch *touch);
+
+    void onTouchesBegan(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event);
+
+    void onTouchesMoved(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event);
+
+    void onTouchesEnded(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event);
+
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -83,7 +83,7 @@ bool MagneticWorld::init()
     auto magnetSprite3 = magnet3->getSprite();
     this->addChild(magnetSprite3);
     
-    auto magnet4 = new Magnet(400, 200, 100000, 200, b2_world);
+    auto magnet4 = new Magnet(400, 200, 200000, 200, b2_world);
     auto magnetSprite4 = magnet4->getSprite();
     this->addChild(magnetSprite4);
 
@@ -97,6 +97,19 @@ bool MagneticWorld::init()
     magnetList.push_back(magnet3);
     magnetList.push_back(magnet4);
     magnetList.push_back(magnet5);
+    
+    
+    //setup touch for dragging magnets
+    // listen for touch events
+    auto listener = EventListenerTouchAllAtOnce::create();
+    listener->onTouchesBegan = CC_CALLBACK_2(MagneticWorld::onTouchesBegan, this);
+    listener->onTouchesMoved = CC_CALLBACK_2(MagneticWorld::onTouchesMoved, this);
+    listener->onTouchesEnded = CC_CALLBACK_2(MagneticWorld::onTouchesEnded, this);
+    listener->onTouchesCancelled = CC_CALLBACK_2(MagneticWorld::onTouchesEnded, this);
+    
+    this->getEventDispatcher()->
+    addEventListenerWithSceneGraphPriority(listener, this);
+    
     
     auto body = PhysicsBody::createEdgeBox(visibleSize, PHYSICSBODY_MATERIAL_DEFAULT, 3);
     auto edgeNode = Node::create();
@@ -144,7 +157,7 @@ bool MagneticWorld::init()
     
 
     this->physicsBody = PhysicsBody::createCircle(30.0f,
-                                                  PhysicsMaterial(0.1f, 1.0f, 0.0f));
+                                                  PhysicsMaterial(0.1f, 0.3f, 0.0f));
     //set the body isn't affected by the physics world's gravitational force
     this->physicsBody->setGravityEnable(false);
 
@@ -168,6 +181,78 @@ bool MagneticWorld::init()
     scheduleUpdate();
     return true;
 }
+
+bool MagneticWorld::isTouchingSprite(Sprite* sprite, Touch* touch) {
+    float distance = sprite->getPosition().getDistance(this->
+                                                       touchToPoint(touch));
+    return (distance < 25.0f);
+}
+
+Point MagneticWorld::touchToPoint(Touch* touch)
+{
+    // convert the touch object to a position in our cocos2d space
+    return CCDirector::getInstance()->convertToGL(touch->getLocationInView());
+}
+
+void MagneticWorld::onTouchesBegan(const std::vector<Touch*>& touches, Event* event)
+{
+    // reset touch offset
+    this->touchOffset = Point::ZERO;
+
+    for( auto touch : touches )
+    {
+        // if this touch is within our sprite's boundary
+        for ( auto magnet : magnetList) {
+            if (touch && this->isTouchingSprite(magnet->getSprite(), touch)) {
+                // calculate offset from sprite to touch point
+                this->touchOffset = magnet->getSprite()->getPosition() - this->touchToPoint(touch);
+            }
+        }
+    }
+}
+
+void MagneticWorld::onTouchesMoved(const std::vector<Touch*>& touches, Event* event)
+{
+    for( auto touch : touches )
+    {
+        // set the new sprite position
+        if( touch && touchOffset.x && touchOffset.y )
+            for ( auto magnet : magnetList) {
+                if (this->isTouchingSprite(magnet->getSprite(), touch)) {
+                    magnet->getSprite()->setPosition(this->touchToPoint(touch) + this->touchOffset);
+                }
+            }
+    }
+}
+
+void MagneticWorld::onTouchesEnded(const std::vector<Touch*>& touches, Event* event)
+{
+    for( auto touch : touches )
+    {
+        if( touch && touchOffset.x && touchOffset.y  )
+        {
+            // set the new sprite position
+            for ( auto magnet : magnetList) {
+                if (this->isTouchingSprite(magnet->getSprite(), touch)) {
+                    magnet->getSprite()->setPosition(this->touchToPoint(touch) + this->touchOffset);
+
+                    // stop any existing actions and reset the scale
+                    magnet->getSprite()->stopAllActions();
+                    magnet->getSprite()->setScale(1.0f);
+
+                    // animate letting go of the sprite
+                    magnet->getSprite()->runAction(Sequence::create(
+                                                                    ScaleBy::create(0.125f, 1.111f),
+                                                                    ScaleBy::create(0.125f, 0.9f),
+                                                                    nullptr
+                                                                    ));
+                }
+            }
+        }
+    }
+}
+
+
 
 void MagneticWorld::update(float delta) {
     
