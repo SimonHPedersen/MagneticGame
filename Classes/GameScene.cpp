@@ -61,7 +61,8 @@ bool MagneticWorld::init()
     
     // Tilføj et mål felt:
     auto finishTile = FinishTile::create();
-    finishTile->setPosition(Vec2(32, visibleSize.height - 32));
+    finishTile->setAnchorPoint(Vec2(0,0));
+    finishTile->setPosition(Vec2(600, 200));
     this->addChild(finishTile);
 
     /////////////////////////////
@@ -143,7 +144,7 @@ bool MagneticWorld::init()
 
     // position the sprite on the center of the screen
     ballSprite->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y + 200));
-
+    ballSprite->setAnchorPoint(Vec2(0.5f, 0.5f));
 
     ballSprite->setPhysicsBody(this->physicsBody);
 

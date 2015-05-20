@@ -21,6 +21,7 @@ void FinishTile::update(float delta)
         const Size& size = this->getContentSize();
         Rect boundingBox(position.x, position.y, size.width, size.height);
         
+        
         if (boundingBox.intersectsCircle(ball->getPosition(), ball->getContentSize().width / 2)) {
             auto gameOverLayer = GameOverLayer::create();
             this->getParent()->addChild(gameOverLayer, 1);
