@@ -1,5 +1,7 @@
 #include "GameScene.h"
 #include "Magnet.h"
+#include "HorizontalWall.h"
+#include "VerticalWall.h"
 #include "FinishTile.h"
 
 USING_NS_CC;
@@ -104,6 +106,16 @@ bool MagneticWorld::init()
     magnetList.push_back(magnet4);
     magnetList.push_back(magnet5);
     
+    // wall setup
+    new HorizontalWall(300, 300, 20, this);
+    new HorizontalWall(800, 800, 20, this);
+    new HorizontalWall(500, 500, 20, this);
+    new HorizontalWall(100, 100, 20, this);
+    
+    new VerticalWall(10, 50, 20, this);
+    new VerticalWall(500, 700, 20, this);
+    new VerticalWall(800, 600, 20, this);
+    new VerticalWall(700, 100, 20, this);
     
     //setup touch for dragging magnets
     // listen for touch events
@@ -128,40 +140,7 @@ bool MagneticWorld::init()
                                                PhysicsMaterial(0.1f, 1.0f, 0.0f));
     this->physicsBodyStatic->setDynamic(false);
 
-    //create a sprite
-    auto sprite = Sprite::create("CloseSelected.png");
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y + 200));
-    //apply physicsBody to the sprite
-    sprite->setPhysicsBody(physicsBodyStatic);
-
-    addChild(sprite);
-
-    //magnet2
-    physicsBodyStatic2 = PhysicsBody::createCircle(30.0f,
-                                                   PhysicsMaterial(0.1f, 1.0f, 0.0f));
-    this->physicsBodyStatic2->setDynamic(false);
     
-    auto sprite2 = Sprite::create("CloseSelected.png");
-    sprite2->setPosition(Vec2(visibleSize.width/2 + origin.x - 200, visibleSize.height/2 + origin.y - 200));
-    //apply physicsBody to the sprite
-    sprite2->setPhysicsBody(physicsBodyStatic2);
-
-    addChild(sprite2);
-
-    
-    //magnet3
-    physicsBodyStatic3 = PhysicsBody::createCircle(30.0f,
-                                                   PhysicsMaterial(0.1f, 1.0f, 0.8f));
-    this->physicsBodyStatic3->setDynamic(false);
-    
-    auto sprite3 = Sprite::create("CloseSelected.png");
-    sprite3->setPosition(Vec2(visibleSize.width/2 + origin.x + 200, visibleSize.height/2 + origin.y - 200));
-    //apply physicsBody to the sprite
-    sprite3->setPhysicsBody(physicsBodyStatic3);
-    
-    addChild(sprite3);
-    
-
     this->physicsBody = PhysicsBody::createCircle(30.0f,
                                                   PhysicsMaterial(0.1f, 0.3f, 0.0f));
     //set the body isn't affected by the physics world's gravitational force
