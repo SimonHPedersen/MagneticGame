@@ -25,14 +25,6 @@ Scene* MagneticWorld::createScene()
 
 void MagneticWorld::setPhyWorld(cocos2d::PhysicsWorld *world) {
     m_world = world;
-    
-    /*auto joint  = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic,  Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
-    auto joint2 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic2, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
-    auto joint3 = PhysicsJointSpring::construct(physicsBody, physicsBodyStatic3, Vec2(0,0), Vec2(0,0), 10.0f, 1.0f);
-    m_world->addJoint(joint);
-    m_world->addJoint(joint2);
-    m_world->addJoint(joint3);
-     */
 }
 
 // on "init" you need to initialize your instance
@@ -73,29 +65,23 @@ bool MagneticWorld::init()
 
     /////////////////////////////
     // 3. add your codes below...
-
-    //forsøg på brug af magnet
-    
-    //først laver vi lige en b2world
-    auto b2_world = new b2World(b2Vec2(1.0f, 1.0f));
-
-    auto magnet1 = new Magnet(400, 400, 100000, 200, b2_world);
+    auto magnet1 = new Magnet(400, 400, 100000, 200);
     auto magnetSprite1 = magnet1->getSprite();
     this->addChild(magnetSprite1);
 
-    auto magnet2 = new Magnet(600, 600, -200000, 200, b2_world);
+    auto magnet2 = new Magnet(600, 600, -200000, 200);
     auto magnetSprite2 = magnet2->getSprite();
     this->addChild(magnetSprite2);
 
-    auto magnet3 = new Magnet(200, 400, -200000, 200, b2_world);
+    auto magnet3 = new Magnet(200, 400, -200000, 200);
     auto magnetSprite3 = magnet3->getSprite();
     this->addChild(magnetSprite3);
     
-    auto magnet4 = new Magnet(400, 200, 200000, 200, b2_world);
+    auto magnet4 = new Magnet(400, 200, 200000, 200);
     auto magnetSprite4 = magnet4->getSprite();
     this->addChild(magnetSprite4);
 
-    auto magnet5 = new Magnet(800, 100, -100000, 200, b2_world);
+    auto magnet5 = new Magnet(800, 100, -100000, 200);
     auto magnetSprite5 = magnet5->getSprite();
     this->addChild(magnetSprite5);
     

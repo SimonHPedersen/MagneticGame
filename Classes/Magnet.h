@@ -11,12 +11,11 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
-#include "Box2D/Box2D.h"
 
 class Magnet
 {
     public:
-    Magnet(int x, int y, int strength, int magnetRadius, b2World* world);
+    Magnet(int x, int y, int strength, int magnetRadius);
     
     cocos2d::Sprite* getSprite();
     int strength;
@@ -24,7 +23,6 @@ class Magnet
     
     private:
     cocos2d::Sprite* magnetSprite;
-    b2Body* magnetB2Body;
 };
 
 #endif /* defined(__MagneticGame__Magnet__) */
