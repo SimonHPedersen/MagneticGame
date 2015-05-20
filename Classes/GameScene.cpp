@@ -151,12 +151,24 @@ bool MagneticWorld::init()
     this->addChild(ballSprite, 0);
     finishTile->setBall(ballSprite);
 
+    finishTile->setGameEndedCallback(CC_CALLBACK_0(MagneticWorld::gameEnded, this));
+    
     //timer
-    auto timerLabel = TimerLabel::create();
+    timerLabel = TimerLabel::create();
     timerLabel->initialize(visibleSize.width - 30, visibleSize.height - 20, 60, this);
+
     
     scheduleUpdate();
     return true;
+}
+
+void MagneticWorld::gameEnded() {
+    timerLabel->pause();
+    this->paused = true;
+    auto staticBody = PhysicsBody::createCircle(30.0f,
+                                                  PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    staticBody->setDynamic(false);
+    ballSprite->setPhysicsBody(staticBody);
 }
 
 bool MagneticWorld::isTouchingSprite(Sprite* sprite, Touch* touch) {
@@ -232,22 +244,19 @@ void MagneticWorld::onTouchesEnded(const std::vector<Touch*>& touches, Event* ev
 
 
 void MagneticWorld::update(float delta) {
-    
-    for (std::list<Magnet*>::const_iterator iterator = magnetList.begin(); iterator != magnetList.end(); ++iterator) {
-        auto magnet = (*iterator);
-        auto xDiff = magnet->getSprite()->getPositionX() - ballSprite->getPositionX();
-        auto yDiff = magnet->getSprite()->getPositionY() - ballSprite->getPositionY();
-        auto rad2 = xDiff*xDiff + yDiff*yDiff;
-        auto distance = sqrt(rad2);
-        
-        if (distance <= magnet->radius) {
-            physicsBody->applyImpulse(Vec2((magnet->strength*xDiff)/rad2, (magnet->strength*yDiff)/rad2)), Vec2(ballSprite->getPositionX(), ballSprite->getPositionY());
-
+    if (!paused) {
+        for (std::list<Magnet*>::const_iterator iterator = magnetList.begin(); iterator != magnetList.end(); ++iterator) {
+            auto magnet = (*iterator);
+            auto xDiff = magnet->getSprite()->getPositionX() - ballSprite->getPositionX();
+            auto yDiff = magnet->getSprite()->getPositionY() - ballSprite->getPositionY();
+            auto rad2 = xDiff*xDiff + yDiff*yDiff;
+            auto distance = sqrt(rad2);
+            
+            if (distance <= magnet->radius) {
+                physicsBody->applyImpulse(Vec2((magnet->strength*xDiff)/rad2, (magnet->strength*yDiff)/rad2)), Vec2(ballSprite->getPositionX(), ballSprite->getPositionY());
+            }
         }
-        
     }
-    
-    
 }
 
 void MagneticWorld::menuCloseCallback(Ref* pSender)

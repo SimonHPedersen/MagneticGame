@@ -24,6 +24,10 @@ void TimerLabel::initialize(int x, int y, int startValue, Layer* layer) {
     parentLayer->addChild(this);
 }
 
+void TimerLabel::pause() {
+    paused = true;
+}
+
 bool TimerLabel::init()
 {
     this->scheduleUpdate();
@@ -31,10 +35,12 @@ bool TimerLabel::init()
 }
 
 void TimerLabel::update(float delta) {
-    currentDelta += delta;
-    if (currentDelta > 1) {
-        timer--;
-        this->timerLabel->setString(std::to_string(timer));
-        currentDelta = 0.0f;
+    if (!paused) {
+        currentDelta += delta;
+        if (currentDelta > 1) {
+            timer--;
+            this->timerLabel->setString(std::to_string(timer));
+            currentDelta = 0.0f;
+        }
     }
 }

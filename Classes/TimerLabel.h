@@ -15,6 +15,7 @@ class TimerLabel : public cocos2d::Node
 {
 public:
     void initialize(int x, int y, int startValue, cocos2d::Layer* layer);
+    void pause();
     
     virtual bool init() override;
     virtual void update(float delta);
@@ -29,6 +30,7 @@ private:
     float currentDelta = 0.0f;
     cocos2d::Layer* parentLayer;
     cocos2d::Label* timerLabel;
+    bool paused = false;
     
 };
 

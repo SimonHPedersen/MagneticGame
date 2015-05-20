@@ -16,7 +16,7 @@ bool FinishTile::init()
 
 void FinishTile::update(float delta)
 {
-    if (ball != nullptr) {
+    if (ball != nullptr && !gameFinished) {
         const Vec2& position = this->getPosition();
         const Size& size = this->getContentSize();
         Rect boundingBox(position.x, position.y, size.width, size.height);
@@ -25,9 +25,14 @@ void FinishTile::update(float delta)
             auto gameOverLayer = GameOverLayer::create();
             this->getParent()->addChild(gameOverLayer, 1);
             gameOverLayer->show(true);
+            finishCallback();
+            gameFinished = true;
 //            auto gameOverScene = GameOverScene::createScene();
 //            Director::getInstance()->pushScene(TransitionFade::create(0.5, gameOverScene, Color3B(0,0,0)));
         }
     }
 }
 
+void FinishTile::setGameEndedCallback(finishCallBackRef finishCallback) {
+    this->finishCallback = finishCallback;
+}

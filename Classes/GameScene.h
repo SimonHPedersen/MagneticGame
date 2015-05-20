@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "Box2D/Box2D.h"
 #include "Magnet.h"
+#include "TimerLabel.h"
 
 class MagneticWorld : public cocos2d::Layer
 {
@@ -29,6 +30,8 @@ public:
     virtual void update(float delta);
     std::list<Magnet*> magnetList;
     cocos2d::Vec2 touchOffset;
+    TimerLabel* timerLabel;
+    bool paused = false;
     
     public:
     // implement the "static create()" method manually
@@ -44,7 +47,7 @@ public:
 
     void onTouchesEnded(const std::vector<cocos2d::Touch *> &touches, cocos2d::Event *event);
 
-
+    void gameEnded();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
