@@ -8,3 +8,5 @@ proj.android/assets
 cocos2d/cocos/platform/android/java/bin
 cocos2d/cocos/platform/android/java/gen
 bin/
+*.xcuserstate
+*.xcbkptlist
