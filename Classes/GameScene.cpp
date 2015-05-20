@@ -148,7 +148,7 @@ bool MagneticWorld::init()
 
     // add the sprite as a child to this layer
     this->addChild(ballSprite, 0);
-    
+    finishTile->setBall(ballSprite);
     scheduleUpdate();
     return true;
 }

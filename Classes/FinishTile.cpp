@@ -7,23 +7,22 @@ USING_NS_CC;
 bool FinishTile::init()
 {
     if (initWithFile("finish.png")) {
-        auto body = PhysicsBody::createBox(getContentSize(), PhysicsMaterial(), Vec2::ZERO);
-        setPhysicsBody(body);
-        
-        body->setContactTestBitmask(0xFFFFFFFF);
-        body->setDynamic(false);
-        
-        auto contactListener = EventListenerPhysicsContact::create();
-        contactListener->onContactBegin = CC_CALLBACK_1(FinishTile::onContactBegin, this);
-        _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
-        
+        this->scheduleUpdate();
         return true;
     }
     return false;
 }
 
-bool FinishTile::onContactBegin(cocos2d::PhysicsContact& contact)
+void FinishTile::update(float delta)
 {
-    std::cout << "onContactBegin" << std::endl;
-    return false;
+    if (ball != nullptr) {
+        const Vec2& position = this->getPosition();
+        const Size& size = this->getContentSize();
+        Rect boundingBox(position.x, position.y, size.width, size.height);
+        
+        if (boundingBox.intersectsCircle(ball->getPosition(), ball->getContentSize().width / 2)) {
+            std::cout << "WE GOT A WINNER!!" << std::endl;
+        }
+    }
 }
+
