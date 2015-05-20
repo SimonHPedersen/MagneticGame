@@ -21,6 +21,7 @@ Magnet::Magnet(int x, int y, int strength, int magnetRadius, b2World* world) {
     
     magnetSprite->setPosition(x,y);
     
+    /* Smuk men unødvendig kode
     auto radius = (magnetSprite->getBoundingBox().getMaxX() - magnetSprite->getBoundingBox().getMinX()) / 2;
 
     b2BodyDef* myBodyDef;
@@ -43,6 +44,8 @@ Magnet::Magnet(int x, int y, int strength, int magnetRadius, b2World* world) {
     body->CreateFixture(&fixtureDef);
     
     magnetB2Body = body;
+    */
+    
     this->strength = strength;
     this->radius = magnetRadius;
 }
