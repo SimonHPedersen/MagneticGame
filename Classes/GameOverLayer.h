@@ -3,11 +3,12 @@
 
 #include "cocos2d.h"
 
-class GameOverLayer  : public cocos2d::Layer {
+class GameOverLayer  : public cocos2d::LayerColor {
 public:
     virtual bool init() override;
     
     void show(bool won);
+    void retryCallback(cocos2d::Ref* pSender);
     
     CREATE_FUNC(GameOverLayer);
 private:

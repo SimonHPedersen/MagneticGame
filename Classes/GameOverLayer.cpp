@@ -1,25 +1,33 @@
 
 #include "GameOverLayer.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
 bool GameOverLayer::init()
 {
-    if (!Layer::init()) {
-        setContentSize(Size(200, 200));
-        setColor(Color3B::GRAY);
-        return false;
+    if (LayerColor::initWithColor(Color4B(0, 0, 0, 125), 400, 200)) {
+        Size visibleSize = Director::getInstance()->getVisibleSize();
+        Vec2 origin = Director::getInstance()->getVisibleOrigin();
+        this->setPosition(visibleSize.width / 2 - 200, visibleSize.height / 2 - 100);
+        
+        auto retryItem = MenuItemFont::create("- Retry -", CC_CALLBACK_1(GameOverLayer::retryCallback, this));
+        retryItem->setAnchorPoint(Vec2(0, 1));
+        retryItem->setFontSizeObj(34);
+        retryItem->setPosition(200 - (retryItem->getContentSize().width / 2), 100);
+        
+        auto menu = Menu::create(retryItem, NULL);
+        menu->setPosition(Vec2::ZERO);
+        this->addChild(menu, 1);
+        
+        return true;
     }
-    return true;
+    return false;
 }
 
 void GameOverLayer::show(bool won)
 {
     Sprite *sprite;
-    Size visibleSize = Director::getInstance()->getVisibleSize();
-    Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    
-    this->setPosition(visibleSize.width / 2, visibleSize.height / 2);
     int rand = cocos2d::random(0, RAND_MAX);
     if (won) {
         switch (rand % 3) {
@@ -43,6 +51,22 @@ void GameOverLayer::show(bool won)
                 break;
         }
     }
+    sprite->setAnchorPoint(Vec2(0, 1));
+    sprite->setPosition(40,
+                        this->getContentSize().height - 10);
     addChild(sprite);
-    this->setVisible(true);
+    
+    auto gameOverLabel = Label::createWithTTF("Game Over!", "fonts/Marker Felt.ttf", 50);
+    gameOverLabel->setAnchorPoint(Vec2(0, 1));
+    gameOverLabel->setPosition(Vec2(sprite->getContentSize().width + 60,
+                                    this->getContentSize().height - 20));
+    addChild(gameOverLabel);
+    
+    setVisible(true);
+}
+
+void GameOverLayer::retryCallback(cocos2d::Ref* pSender)
+{
+    auto gameScene = MagneticWorld::createScene();
+    Director::getInstance()->replaceScene(TransitionFade::create(0.5, gameScene, Color3B(0,0,0)));
 }
