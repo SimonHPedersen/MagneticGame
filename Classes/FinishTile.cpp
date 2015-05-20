@@ -16,16 +16,16 @@ bool FinishTile::init()
 
 void FinishTile::update(float delta)
 {
-    if (ball != nullptr && !gameFinished) {
+    if (timer != nullptr && ball != nullptr && !gameFinished) {
         const Vec2& position = this->getPosition();
         const Size& size = this->getContentSize();
         Rect boundingBox(position.x, position.y, size.width, size.height);
         
         
-        if (boundingBox.intersectsCircle(ball->getPosition(), ball->getContentSize().width / 2)) {
+        if (timer->getTimer() <= 0 || boundingBox.intersectsCircle(ball->getPosition(), ball->getContentSize().width / 2)) {
             auto gameOverLayer = GameOverLayer::create();
             this->getParent()->addChild(gameOverLayer, 1);
-            gameOverLayer->show(true);
+            gameOverLayer->show(timer->getTimer() <= 0 ? false : true);
             finishCallback();
             gameFinished = true;
 //            auto gameOverScene = GameOverScene::createScene();
@@ -36,4 +36,8 @@ void FinishTile::update(float delta)
 
 void FinishTile::setGameEndedCallback(finishCallBackRef finishCallback) {
     this->finishCallback = finishCallback;
+}
+
+void FinishTile::setTimer(TimerLabel* timer) {
+    this->timer = timer;
 }

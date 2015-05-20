@@ -3,6 +3,7 @@
 #define __MagneticGame__FinishTile__
 
 #include "cocos2d.h"
+#include "TimerLabel.h"
 
 typedef std::function<void()> finishCallBackRef;
 
@@ -20,11 +21,13 @@ public:
     CREATE_FUNC(FinishTile);
 
     void setGameEndedCallback(finishCallBackRef param);
+    void setTimer(TimerLabel* timer);
 
 protected:
     cocos2d::Sprite* ball;
     finishCallBackRef finishCallback;
     bool gameFinished = false;
+    TimerLabel* timer;
 };
 
 #endif /* defined(__MagneticGame__FinishTile__) */

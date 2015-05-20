@@ -34,6 +34,10 @@ bool TimerLabel::init()
     return true;
 }
 
+int TimerLabel::getTimer() {
+    return timer;
+}
+
 void TimerLabel::update(float delta) {
     if (!paused) {
         currentDelta += delta;

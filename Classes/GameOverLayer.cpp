@@ -55,6 +55,11 @@ void GameOverLayer::show(bool won)
     sprite->setPosition(40,
                         this->getContentSize().height - 10);
     addChild(sprite);
+    if (won) {
+        auto emitter = ParticleFireworks::create();
+        emitter->setPosition(40, this->getContentSize().height - 10);
+        addChild(emitter, 10);
+    }
     
     auto gameOverLabel = Label::createWithTTF("Game Over!", "fonts/Marker Felt.ttf", 50);
     gameOverLabel->setAnchorPoint(Vec2(0, 1));

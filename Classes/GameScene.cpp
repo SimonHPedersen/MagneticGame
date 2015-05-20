@@ -62,7 +62,7 @@ bool MagneticWorld::init()
     // Tilføj et mål felt:
     auto finishTile = FinishTile::create();
     finishTile->setAnchorPoint(Vec2(0,0));
-    finishTile->setPosition(Vec2(600, 200));
+    finishTile->setPosition(Vec2(800, 200));
     this->addChild(finishTile);
 
     /////////////////////////////
@@ -95,12 +95,18 @@ bool MagneticWorld::init()
     magnetList.push_back(magnet5);
     
     // wall setup
+    new HorizontalWall(0, visibleSize.height - 8, 300, this);
+    new HorizontalWall(0, 8, 300, this);
+    
     new HorizontalWall(300, 300, 20, this);
     new HorizontalWall(800, 800, 20, this);
     new HorizontalWall(500, 500, 20, this);
     new HorizontalWall(100, 100, 20, this);
     
-    new VerticalWall(10, 50, 20, this);
+    //new VerticalWall(10, 50, 20, this);
+    new VerticalWall(8, 0, 300, this);
+    new VerticalWall(visibleSize.width - 8, 0, 300, this);
+    
     new VerticalWall(500, 700, 20, this);
     new VerticalWall(800, 600, 20, this);
     new VerticalWall(700, 100, 20, this);
@@ -156,9 +162,9 @@ bool MagneticWorld::init()
     
     //timer
     timerLabel = TimerLabel::create();
-    timerLabel->initialize(visibleSize.width - 30, visibleSize.height - 20, 60, this);
-
-    
+    timerLabel->initialize(visibleSize.width - 40, visibleSize.height - 30, 10, this);
+    finishTile->setTimer(timerLabel);
+        
     scheduleUpdate();
     return true;
 }

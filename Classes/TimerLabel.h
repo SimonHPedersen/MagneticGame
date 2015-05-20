@@ -20,8 +20,11 @@ public:
     virtual bool init() override;
     virtual void update(float delta);
     
+    int getTimer();
+    
     CREATE_FUNC(TimerLabel);
 
+    
 private:
     int xPos;
     int yPos;
