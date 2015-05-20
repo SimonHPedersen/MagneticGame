@@ -1,5 +1,6 @@
 
 #include "FinishTile.h"
+#include "GameOverLayer.h"
 #include <iostream>
 
 USING_NS_CC;
@@ -21,7 +22,11 @@ void FinishTile::update(float delta)
         Rect boundingBox(position.x, position.y, size.width, size.height);
         
         if (boundingBox.intersectsCircle(ball->getPosition(), ball->getContentSize().width / 2)) {
-            std::cout << "WE GOT A WINNER!!" << std::endl;
+            auto gameOverLayer = GameOverLayer::create();
+            this->getParent()->addChild(gameOverLayer, 1);
+            gameOverLayer->show(true);
+//            auto gameOverScene = GameOverScene::createScene();
+//            Director::getInstance()->pushScene(TransitionFade::create(0.5, gameOverScene, Color3B(0,0,0)));
         }
     }
 }
