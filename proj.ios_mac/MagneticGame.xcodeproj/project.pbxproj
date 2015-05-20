@@ -61,8 +61,6 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
-		CEA9AB4C1B0C86CA00B6E39D /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB481B0C86CA00B6E39D /* HorizontalWall.cpp */; };
-		CEA9AB4D1B0C86CA00B6E39D /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB4A1B0C86CA00B6E39D /* VerticalWall.cpp */; };
 		CEA9AB501B0C910900B6E39D /* TimerLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
@@ -87,14 +85,20 @@
 		DF27B3511B0C8C7E0011E3B0 /* won1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34C1B0C8C7E0011E3B0 /* won1.png */; };
 		DF27B3521B0C8C7E0011E3B0 /* won2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34D1B0C8C7E0011E3B0 /* won2.png */; };
 		DF27B3531B0C8C7E0011E3B0 /* won3.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34E1B0C8C7E0011E3B0 /* won3.png */; };
-		DF27B3561B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */; };
-		DF27B3571B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */; };
 		DF27B35D1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */; };
 		DF27B35E1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */; };
 		DF27B35F1B0C918C0011E3B0 /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */; };
 		DF27B3601B0C918C0011E3B0 /* VerticalWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */; };
 		DF27B3621B0C91AE0011E3B0 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3611B0C91AE0011E3B0 /* wall.png */; };
 		DF27B3631B0C91AE0011E3B0 /* wall.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B3611B0C91AE0011E3B0 /* wall.png */; };
+		DF27B36C1B0CA4000011E3B0 /* GameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B36A1B0CA4000011E3B0 /* GameOverLayer.cpp */; };
+		DF27B36D1B0CA4000011E3B0 /* GameOverLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DF27B36A1B0CA4000011E3B0 /* GameOverLayer.cpp */; };
+		DF27B36E1B0CA40A0011E3B0 /* won1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34C1B0C8C7E0011E3B0 /* won1.png */; };
+		DF27B36F1B0CA40D0011E3B0 /* lost1.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34A1B0C8C7E0011E3B0 /* lost1.png */; };
+		DF27B3701B0CA4100011E3B0 /* lost2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34B1B0C8C7E0011E3B0 /* lost2.png */; };
+		DF27B3711B0CA4140011E3B0 /* won2.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34D1B0C8C7E0011E3B0 /* won2.png */; };
+		DF27B3721B0CA4160011E3B0 /* won3.png in Resources */ = {isa = PBXBuildFile; fileRef = DF27B34E1B0C8C7E0011E3B0 /* won3.png */; };
+		DF27B3731B0CA43C0011E3B0 /* TimerLabel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,10 +186,6 @@
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CE83C2311B0B552C00E87B35 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		CEA9AB481B0C86CA00B6E39D /* HorizontalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HorizontalWall.cpp; sourceTree = "<group>"; };
-		CEA9AB491B0C86CA00B6E39D /* HorizontalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalWall.h; sourceTree = "<group>"; };
-		CEA9AB4A1B0C86CA00B6E39D /* VerticalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VerticalWall.cpp; sourceTree = "<group>"; };
-		CEA9AB4B1B0C86CA00B6E39D /* VerticalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalWall.h; sourceTree = "<group>"; };
 		CEA9AB4E1B0C910900B6E39D /* TimerLabel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TimerLabel.cpp; sourceTree = "<group>"; };
 		CEA9AB4F1B0C910900B6E39D /* TimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerLabel.h; sourceTree = "<group>"; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -207,13 +207,13 @@
 		DF27B34C1B0C8C7E0011E3B0 /* won1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = won1.png; sourceTree = "<group>"; };
 		DF27B34D1B0C8C7E0011E3B0 /* won2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = won2.png; sourceTree = "<group>"; };
 		DF27B34E1B0C8C7E0011E3B0 /* won3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = won3.png; sourceTree = "<group>"; };
-		DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverScene.cpp; sourceTree = "<group>"; };
-		DF27B3551B0C8CA60011E3B0 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverScene.h; sourceTree = "<group>"; };
 		DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HorizontalWall.cpp; sourceTree = "<group>"; };
 		DF27B35A1B0C918C0011E3B0 /* HorizontalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalWall.h; sourceTree = "<group>"; };
 		DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VerticalWall.cpp; sourceTree = "<group>"; };
 		DF27B35C1B0C918C0011E3B0 /* VerticalWall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalWall.h; sourceTree = "<group>"; };
 		DF27B3611B0C91AE0011E3B0 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
+		DF27B36A1B0CA4000011E3B0 /* GameOverLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameOverLayer.cpp; sourceTree = "<group>"; };
+		DF27B36B1B0CA4000011E3B0 /* GameOverLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameOverLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +353,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DF27B36A1B0CA4000011E3B0 /* GameOverLayer.cpp */,
+				DF27B36B1B0CA4000011E3B0 /* GameOverLayer.h */,
 				DF27B3591B0C918C0011E3B0 /* HorizontalWall.cpp */,
 				DF27B35A1B0C918C0011E3B0 /* HorizontalWall.h */,
 				DF27B35B1B0C918C0011E3B0 /* VerticalWall.cpp */,
@@ -361,10 +363,6 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				DF27B33C1B0C6B1F0011E3B0 /* FinishTile.cpp */,
 				DF27B33D1B0C6B1F0011E3B0 /* FinishTile.h */,
-				DF27B3541B0C8CA60011E3B0 /* GameOverScene.cpp */,
-				DF27B3551B0C8CA60011E3B0 /* GameOverScene.h */,
-				46880B8619C43A87006E1F66 /* GameScene.cpp */,
-				CE83C2311B0B552C00E87B35 /* GameScene.h */,
 				DF27B3321B0C64290011E3B0 /* Magnet.cpp */,
 				DF27B3331B0C64290011E3B0 /* Magnet.h */,
 				DF27B3251B0B6B070011E3B0 /* MainMenuScene.cpp */,
@@ -564,13 +562,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF27B3701B0CA4100011E3B0 /* lost2.png in Resources */,
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				DF27B3631B0C91AE0011E3B0 /* wall.png in Resources */,
+				DF27B3711B0CA4140011E3B0 /* won2.png in Resources */,
 				DF27B3391B0C67040011E3B0 /* magnet2.png in Resources */,
 				DF27B32E1B0B6B7C0011E3B0 /* magnet.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
+				DF27B36E1B0CA40A0011E3B0 /* won1.png in Resources */,
+				DF27B36F1B0CA40D0011E3B0 /* lost1.png in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				DF27B3721B0CA4160011E3B0 /* won3.png in Resources */,
 				DF27B3421B0C6D160011E3B0 /* finish.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				DF27B32C1B0B6B7C0011E3B0 /* ball.png in Resources */,
@@ -587,6 +590,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				DF27B35D1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameScene.cpp in Sources */,
+				DF27B36C1B0CA4000011E3B0 /* GameOverLayer.cpp in Sources */,
 				DF27B3341B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DF27B35F1B0C918C0011E3B0 /* VerticalWall.cpp in Sources */,
@@ -594,7 +598,6 @@
 				CEA9AB501B0C910900B6E39D /* TimerLabel.cpp in Sources */,
 				DF27B3271B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
 				DF27B33E1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
-				DF27B3561B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -603,7 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF27B3571B0C8CA60011E3B0 /* GameOverScene.cpp in Sources */,
+				DF27B3731B0CA43C0011E3B0 /* TimerLabel.cpp in Sources */,
 				DF27B33F1B0C6B1F0011E3B0 /* FinishTile.cpp in Sources */,
 				DF27B3351B0C64290011E3B0 /* Magnet.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -612,6 +615,7 @@
 				DF27B35E1B0C918C0011E3B0 /* HorizontalWall.cpp in Sources */,
 				DF27B3281B0B6B070011E3B0 /* MainMenuScene.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* GameScene.cpp in Sources */,
+				DF27B36D1B0CA4000011E3B0 /* GameOverLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
