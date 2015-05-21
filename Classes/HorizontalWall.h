@@ -10,6 +10,7 @@
 #define __MagneticGame__HorizontalWall__
 
 #include <stdio.h>
+#include "cocos2d.h"
 
 class HorizontalWall
 {

@@ -10,6 +10,7 @@
 #define __MagneticGame__TimerLabel__
 
 #include <stdio.h>
+#include "cocos2d.h"
 
 class TimerLabel : public cocos2d::Node
 {
