@@ -131,12 +131,6 @@ bool MagneticWorld::init()
     edgeNode->setPosition(Point(visibleSize.width/2,visibleSize.height/2));
     edgeNode->setPhysicsBody(body);
     this->addChild(edgeNode);
-
-    //magnet1
-    physicsBodyStatic = PhysicsBody::createCircle(30.0f,
-                                               PhysicsMaterial(0.1f, 1.0f, 0.0f));
-    this->physicsBodyStatic->setDynamic(false);
-
     
     this->physicsBody = PhysicsBody::createCircle(30.0f,
                                                   PhysicsMaterial(0.1f, 0.3f, 0.0f));

@@ -14,7 +14,7 @@ Magnet::Magnet(int x, int y, int strength, int magnetRadius) {
 
     magnetSprite = Sprite::create("magnet.png");
     if (strength < 0) {
-        magnetSprite->setColor(Color3B::GREEN);
+        magnetSprite->setColor(Color3B::YELLOW);
     }
     
     magnetSprite->setAnchorPoint(Vec2(0.5f, 0.5f));
